@@ -25,7 +25,8 @@ import com.example.wordsapp.databinding.ActivityDetailBinding
 class DetailActivity : AppCompatActivity() {
 
     companion object{
-        const val LETTER = "letter"
+        val LETTER = "letter"
+        val SEARCH_PREFIX = "https://www.google.com/search?q=" // base URL for Google search
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
