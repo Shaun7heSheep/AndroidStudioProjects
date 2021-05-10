@@ -31,7 +31,7 @@ import androidx.recyclerview.widget.RecyclerView
  * Adapter for the [RecyclerView] in [MainActivity].
  */
 class LetterAdapter :
-    RecyclerView.Adapter<LetterAdapter.LetterViewHolder>() {
+        RecyclerView.Adapter<LetterAdapter.LetterViewHolder>() {
 
     // Generates a [CharRange] from 'A' to 'Z' and converts it to a list
     private val list = ('A').rangeTo('Z').toList()
@@ -82,8 +82,8 @@ class LetterAdapter :
     companion object Accessibility : View.AccessibilityDelegate() {
         @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
         override fun onInitializeAccessibilityNodeInfo(
-            host: View?,
-            info: AccessibilityNodeInfo?
+                host: View?,
+                info: AccessibilityNodeInfo?
         ) {
             super.onInitializeAccessibilityNodeInfo(host, info)
             // With `null` as the second argument to [AccessibilityAction], the
@@ -92,10 +92,10 @@ class LetterAdapter :
             // it announces "double tap to <custom string>".
             val customString = host?.context?.getString(R.string.look_up_words)
             val customClick =
-                AccessibilityNodeInfo.AccessibilityAction(
-                    AccessibilityNodeInfo.ACTION_CLICK,
-                    customString
-                )
+                    AccessibilityNodeInfo.AccessibilityAction(
+                            AccessibilityNodeInfo.ACTION_CLICK,
+                            customString
+                    )
             info?.addAction(customClick)
         }
     }

@@ -24,7 +24,7 @@ import com.example.wordsapp.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
 
-    companion object{
+    companion object {
         val LETTER = "letter"
         val SEARCH_PREFIX = "https://www.google.com/search?q=" // base URL for Google search
     }
@@ -49,7 +49,7 @@ class DetailActivity : AppCompatActivity() {
 
         // Adds a [DividerItemDecoration] between items
         recyclerView.addItemDecoration(
-            DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
+                DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
         )
 
         title = getString(R.string.detail_prefix) + " " + letterId
