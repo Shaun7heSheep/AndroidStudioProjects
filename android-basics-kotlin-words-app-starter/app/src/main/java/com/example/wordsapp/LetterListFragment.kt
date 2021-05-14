@@ -31,11 +31,14 @@ class LetterListFragment : Fragment() {
         setHasOptionsMenu(true)
     }
 
+    /* Inflate the layout (view) */
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         _binding = FragmentLetterListBinding.inflate(inflater, container, false)
-        return binding.root
+        val view = binding.root
+        return view
     }
 
+    /* Do something with the view just created */
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         recyclerView = binding.recyclerView
         chooseLayout()
@@ -46,7 +49,7 @@ class LetterListFragment : Fragment() {
         _binding = null // view no longer exists
     }
 
-    // Inflate menu Icon
+    /* Inflate menu Icon */
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         inflater.inflate(R.menu.layout_menu, menu)
 
@@ -64,18 +67,15 @@ class LetterListFragment : Fragment() {
 
                 return true
             }
-            // catch unhandled cases
             else -> super.onOptionsItemSelected(item)
         }
     }
 
-    // Set menu icon based on which layout is being used
     private fun setIcon(menuItem: MenuItem?) {
         if (menuItem == null)
             return
         menuItem.icon =
                 if (isLinearLayoutManager)
-                // if the layout is linear, display grid icon (so that user can tap it to change to grid view)
                     ContextCompat.getDrawable(this.requireContext(), R.drawable.ic_grid_layout)
                 else ContextCompat.getDrawable(this.requireContext(), R.drawable.ic_linear_layout)
     }
@@ -83,8 +83,6 @@ class LetterListFragment : Fragment() {
     private fun chooseLayout() {
         when (isLinearLayoutManager) {
             true -> {
-                // Fragment is not a Context, so cannot pass in 'this' as LayoutManager's context
-                // Instead use 'context' provided by Fragment
                 recyclerView.layoutManager = LinearLayoutManager(context)
                 recyclerView.adapter = LetterAdapter()
             }

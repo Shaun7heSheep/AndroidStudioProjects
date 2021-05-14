@@ -71,7 +71,7 @@ class LetterAdapter :
             val intent = Intent(context, DetailActivity::class.java)
             // the name of the activity you want to show is specified with DetailActivity::class.java
             // an actual Activity object is created behind the scenes.
-            intent.putExtra(DetailActivity.LETTER, holder.button.text.toString()) // button's text is not a string, but a charSequence
+            intent.putExtra(WordListFragment.LETTER, holder.button.text.toString()) // button's text is not a string, but a charSequence
 
             context.startActivity(intent)
         }
