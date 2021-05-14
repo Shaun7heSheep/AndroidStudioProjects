@@ -64,7 +64,6 @@ class LetterListFragment : Fragment() {
                 isLinearLayoutManager = !isLinearLayoutManager
                 chooseLayout()
                 setIcon(item)
-
                 return true
             }
             else -> super.onOptionsItemSelected(item)
