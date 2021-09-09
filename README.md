@@ -30,3 +30,4 @@ Below are my apps created while taking the training course and what I've learned
   - Lifecycle of an activity
   - Android Jetpack: Navigation components
     + Using fragments to navigate screens within a single activity
+    + Implementing NavGraph, NavHost, and NavController
